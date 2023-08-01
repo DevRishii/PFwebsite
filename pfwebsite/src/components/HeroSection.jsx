@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import herogirl from "../assets/herogirl.svg";
 import underline from "../assets/underline.svg";
 import arrow from "../assets/arrow.svg";
+import { useState } from "react";
 
 const HeroSection = () => {
+  const words = ["Health", "Nutrition", "Fitness"];
+  const [wordIndex, setWordIndex] = useState(0);
+  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((wordIndex + 1) % words.length);
+      setKey((prevKey => prevKey + 1));
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [wordIndex]);
+
   return (
     <>
       <div className=" mt-12 container mx-auto px-4 md:px-8">
@@ -12,15 +25,16 @@ const HeroSection = () => {
             <span className="group relative">
               <h1 className="text-4xl md:leading-[4rem] font-Inter font-[800] w-[full]  md:text-5xl mb-12">
                 Promoting{" "}
-                <span className="relative inline-block">
-                  Health
+                
+                <span id="word" className="relative inline-block ">
+                  <span key={key} id="animatedWord" className="animate-slideup inline-block">{words[wordIndex]}</span>
                   <img
-                    className="absolute left-0 bottom-[-.7rem]"
+                    className="absolute left-0 bottom-[-.7rem] z-[2]"
                     src={underline}
                     alt=""
                   />
-                </span>{" "}
-                In Marginalized Communities
+                </span>
+                {" "}In Marginalized Communities
               </h1>
             </span>
             <h2 className="text-2xl w-full md:text-[1.5rem] text-[#636161] font-semibold mb-16">
@@ -36,12 +50,12 @@ const HeroSection = () => {
               <button className="text-[1.5rem] hover:shadow-cool active:shadow-cool2 hover:bg-[#7779A4]  hover:text-white transition-all duration-300 rounded-[.625rem] text-[#7779A4] border-[#7779A4] border-2 h-[4rem] w-[25%] flex items-center justify-center font-Bebas">
                 Events
               </button>
-              <span className="translate-y-[-20%] scale-110 hover:animate-spin transition-all duration-300">
-                <img src={arrow} alt="" />
+              <span className="translate-y-[-20%] scale-110 transition-all duration-300">
+                <img className="" src={arrow} alt="" />
               </span>
             </div>
           </div>
-          <div className="md:w-1/2 max-h-[40vh]">
+          <div className="md:w-1/2 max-h-[40vh] animate-bounce duration-2 ease-in-out ">
             <img
               src={herogirl}
               draggable="false"

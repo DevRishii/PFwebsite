@@ -7,8 +7,8 @@ import AboutUs from "../components/AboutUs";
 import topblackwave from "../assets/topblackwave.svg";
 import bottomblackwave from "../assets/bottomblackwave.svg";
 import Categories from "../components/Categories.jsx";
-import volunteer from '../assets/volunteer.svg'
-
+import Volunteer from "../components/Volunteer";
+import footer from "../assets/footer.svg";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -41,37 +41,15 @@ const Landing = () => {
       <span className="">
         <img className="w-[100vw]" src={bottomblackwave} alt="" />
       </span>
-      <div className="w-full translate-y-[20vh] min-h-[80vh]">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="flex flex-col md:flex-row items-center space-x-12 justify-between py-8 md:py-16">
-            <div className="md:w-[50%] text-left">
-              <h1 className="font-Bebas text-[#6b6eab] text-[1.75rem] mb-4">
-                Volunteer
-              </h1>
-              <h1 className="text-4xl md:leading-[4rem] font-Inter font-[800] w-[70%]  md:text-5xl mb-8">
-                Helping People In Need Around Us
-              </h1>
-              <h2 className="text-2xl md:text-[1.5rem] text-[#636161] w-[80%] font-semibold mb-12">
-                At Prescription Fitness, we believe in the power of health and
-                wellness as a catalyst for change. Our mission is to provide
-                accessible fitness and health resources to marginalized
-                communities.
-              </h2>
-              <button className="text-[1.5rem] h-[4rem] hover:shadow-cool active:shadow-cool2 border-2 border-[#7779A4]  transition-all duration-300 bg-[#7779A4] rounded-[.625rem]   w-[25%] flex items-center justify-center font-Bebas text-white">
-                Become a Voluteer
-              </button>
-            </div>
-            <div className="md:w-1/2">
-              <img
-                src={volunteer}
-                draggable="false"
-                alt="description_of_the_image"
-                className="w-full h-auto"
-              />
-            </div>
+      <Volunteer />
+        <img className="max-w-[30vw] " src={footer} alt="" />
+      <footer className="w-full  min-h-[80vh] bg-gradient-to-r from-[#FFF8E3] via-[#FFF8E3] to-[#F1F9D9]">
+        <div className="">
+          <div className="container z-2 bg-transparent mx-auto px-4 md:px-8">
+            <div className="flex flex-col md:flex-row items-center space-x-12 justify-between py-8 md:py-16"></div>
           </div>
         </div>
-      </div>
+      </footer>
     </>
   );
 };

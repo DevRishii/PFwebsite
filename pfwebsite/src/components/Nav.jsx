@@ -15,7 +15,7 @@ const Nav = () => {
             </div>
             <div className="flex w-full sm:w-1/2 lg:w-[35%] justify-between">
               <li className="text-[1.5rem] py-2 group relative">
-                <a className="" href="/home">
+                <a className="" href="/">
                   Home
                 </a>
                 <span className="absolute opacity-0 group-hover:opacity-100 -left-6 group-hover:left-0 transition-all duration-[300ms] bottom-1 w-full border-b-2 border-black height-[10px] z-50"></span>
@@ -26,8 +26,8 @@ const Nav = () => {
                 </a>
                 <span className="absolute opacity-0 group-hover:opacity-100 -left-6 group-hover:left-0 transition-all duration-[300ms] bottom-1 w-full border-b-2 border-black height-[10px] z-50"></span>
               </li>
-              <li className="text-[1.5rem] group relative py-2">
-                <a className="" href="/home">
+              <li className="text-[1.5rem] group relative py-2 scroll-smooth">
+                <a className="scroll-smooth" href="#AboutUs">
                   About Us
                 </a>
                 <span className="absolute opacity-0 group-hover:opacity-100 -left-6 group-hover:left-0 transition-all duration-[300ms] bottom-1 w-full border-b-2 border-black height-[10px] z-50"></span>
